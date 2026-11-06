@@ -17,7 +17,7 @@ const SellActionWindow = ({ holding }) => {
     try {
       setError("");
       // Get all holdings
-      // const response = await axios.get("http://localhost:3002/allHoldings");
+      // const response = await axios.get("//allHoldings");
 
       // const holdings = response.data;
 
@@ -35,19 +35,16 @@ const SellActionWindow = ({ holding }) => {
       }
 
       // Create SELL order
-      await axios.post("http://localhost:3002/newOrder", {
+      await axios.post("//newOrder", {
         holdingId: holding._id,
         name: holding.name,
         qty: stockQuantity,
         price: stockPrice,
         mode: "SELL",
-       
       });
 
       closeSellWindow();
       refreshHoldings();
-
-    
     } catch (error) {
       console.log(error);
 

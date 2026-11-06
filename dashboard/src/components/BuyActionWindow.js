@@ -15,7 +15,7 @@ const BuyActionWindow = ({ uid }) => {
 
   const handleBuyClick = async () => {
     try {
-      await axios.post("http://localhost:3002/newOrder", {
+      await axios.post("//newOrder", {
         name: uid,
         qty: stockQuantity,
         price: stockPrice,
@@ -24,7 +24,6 @@ const BuyActionWindow = ({ uid }) => {
       refreshHoldings();
 
       closeBuyWindow();
-  
     } catch (error) {
       console.log(error);
     }

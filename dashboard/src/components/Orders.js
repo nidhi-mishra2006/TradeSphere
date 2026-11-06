@@ -25,7 +25,7 @@ const Orders = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/allOrders")
+      .get("//allOrders")
       .then((res) => {
         setAllOrders(res.data);
       })

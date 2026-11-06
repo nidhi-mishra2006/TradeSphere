@@ -139,7 +139,7 @@ const WatchListActions = ({ uid }) => {
 
   const handleSellClick = async () => {
     try {
-      const response = await fetch(`http://localhost:3002/allHoldings`);
+      const response = await fetch(`//allHoldings`);
 
       const holdings = await response.json();
 

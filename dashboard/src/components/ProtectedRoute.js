@@ -8,7 +8,7 @@ const ProtectedRoute = ({ children }) => {
     const verifyUser = async () => {
       try {
         const { data } = await axios.post(
-          "http://localhost:3002/",
+          "/",
           {},
           {
             withCredentials: true,
@@ -19,12 +19,12 @@ const ProtectedRoute = ({ children }) => {
           setIsAuthenticated(true);
         } else {
           setIsAuthenticated(false);
-          window.location.href = "http://localhost:3000/login";
+          window.location.href = "/login";
         }
       } catch (error) {
         console.log("Authentication Error:", error);
         setIsAuthenticated(false);
-        window.location.href = "http://localhost:3000/login";
+        window.location.href = "/login";
       }
     };
 

@@ -49,7 +49,7 @@ export default HomePage;
 //         navigate("/login");
 //       }
 //       const { data } = await axios.post(
-//         "http://localhost:3002",
+//         "/",
 //         {},
 //         { withCredentials: true },
 //       );

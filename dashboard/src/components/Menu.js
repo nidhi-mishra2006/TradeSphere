@@ -18,7 +18,7 @@ const Menu = () => {
   const handleLogout = async () => {
     try {
       const { data } = await axios.post(
-        "http://localhost:3002/logout",
+        "//logout",
         {},
         { withCredentials: true },
       );
@@ -134,4 +134,3 @@ const Menu = () => {
 };
 
 export default Menu;
-

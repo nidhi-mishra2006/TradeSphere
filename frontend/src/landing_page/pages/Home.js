@@ -20,7 +20,7 @@ const Home = () => {
       try {
         // Verify JWT with backend
         const { data } = await axios.post(
-          "http://localhost:3002",
+          "/",
           {},
           {
             withCredentials: true,

@@ -12,7 +12,7 @@ const Holdings = () => {
   const { holdingsUpdated } = useContext(GeneralContext);
 
   useEffect(() => {
-    axios.get("http://localhost:3002/allHoldings").then((res) => {
+    axios.get("//allHoldings").then((res) => {
       // console.log(res.data);
       setAllHoldings(res.data);
     });

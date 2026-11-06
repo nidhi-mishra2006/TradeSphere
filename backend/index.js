@@ -1,4 +1,5 @@
 const dns = require("dns");
+const path = require("path");
 
 dns.setServers(["8.8.8.8", "1.1.1.1"]);
 
@@ -322,6 +323,28 @@ app.post("/newOrder", async (req, res) => {
 //   mongoose.connect(uri);
 //   console.log("DB started!");
 // });
+
+// Frontend & Dashboard deployment
+
+const frontendBuildPath = path.join(__dirname, "../frontend/build");
+const dashboardBuildPath = path.join(__dirname, "../dashboard/build");
+
+//  dashboard static files
+app.use("/dashboard", express.static(dashboardBuildPath));
+
+// Dashboard React routing
+app.get(/^\/dashboard(?:\/.*)?$/, (req, res) => {
+  res.sendFile(path.join(dashboardBuildPath, "index.html"));
+});
+
+//  frontend static files
+app.use(express.static(frontendBuildPath));
+
+// Frontend React routing
+app.get(/.*/, (req, res) => {
+  res.sendFile(path.join(frontendBuildPath, "index.html"));
+});
+
 mongoose
   .connect(uri)
   .then(() => {
