@@ -6,7 +6,7 @@ const Positions = () => {
 
   useEffect(() => {
     axios
-      .get("//allPositions")
+      .get("/allPositions")
       .then((res) => {
         console.log(res.data);
         setAllPositions(res.data);

@@ -25,7 +25,7 @@ const Orders = () => {
 
   useEffect(() => {
     axios
-      .get("//allOrders")
+      .get("/allOrders")
       .then((res) => {
         setAllOrders(res.data);
       })

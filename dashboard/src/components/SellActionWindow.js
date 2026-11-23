@@ -35,7 +35,7 @@ const SellActionWindow = ({ holding }) => {
       }
 
       // Create SELL order
-      await axios.post("//newOrder", {
+      await axios.post("/newOrder", {
         holdingId: holding._id,
         name: holding.name,
         qty: stockQuantity,
