@@ -33,7 +33,7 @@ const Signup = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:3002/signup",
+        "/signup",
         {
           ...inputValue,
         },
@@ -60,7 +60,7 @@ const Signup = () => {
 
         setTimeout(() => {
           // navigate("/");
-          window.location.href = "http://localhost:3001";
+          window.location.href = "/dashboard";
         }, 1000);
       } else {
         handleError(message);

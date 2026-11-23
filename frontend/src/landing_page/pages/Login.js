@@ -31,7 +31,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:3002/login",
+        "/login"
         {
           ...inputValue,
         },
@@ -43,7 +43,7 @@ const Login = () => {
         handleSuccess(message);
         setTimeout(() => {
           // navigate("/");
-          window.location.href = "http://localhost:3001";
+          window.location.href = "/dashboard";
         }, 1000);
       } else {
         handleError(message);
